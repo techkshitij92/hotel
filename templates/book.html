@@ -1,0 +1,45 @@
+<html lang="en">
+<head>{% load static %}
+	<title>Book Here</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+	<link type='text/css' rel='stylesheet' href="{% static 'css1/bootstrap.min.css' %}"/>
+</head><body>
+<div id="booking">
+   <div class="booking-form">
+	 <div class="form-header">
+	   <h1>Make your reservation</h1></div>
+		 <form action ='booked' method='post'>{% csrf_token %}						
+		  <div class="row"> <div class="col-md-6"><div class="form-group">
+			<input class="form-control" type="text" placeholder="Firstname" name ='fname' required></div></div>
+			<div class="col-md-6"><div class="form-group">
+			<input class="form-control" type="text" placeholder="Lastname" name='lname' required></div></div></div>
+		  <div class='row'><div class="col-md-6"><div class="form-group">
+			<input class="form-control" type="text" placeholder="State" name='state' required></div></div>
+			<div class="form-group"><div class="col-md-6">
+			<input class="form-control" type="text" placeholder="City" name='city' required></div></div></div>
+		  <div class='row'><div class='col-md-6'><div class="form-group">
+			<input class="form-control" type="text" placeholder="Address..." name='add' required></div></div>					
+			<div class='col-md-6'><div class="form-group">
+			<input class="form-control" type="text" placeholder="Zip-code" name='zp'required></div></div></div>
+		  <div class="row"><div class="col-md-6"><div class="form-group">
+			<input class="form-control" type="email" name='email' placeholder="Your Email">
+				<span class="form-label">Email</span></div></div>
+			<div class="col-md-6"><div class="form-group">
+			<input class="form-control" type="tel" name='phn' placeholder="Phone Number"></div></div></div>
+			<div class="row"><div class="col-md-6"><div class="form-group">
+				<input class="form-control" type="date" name='cind' required>
+				 <span class="form-label">Check In</span></div></div>									
+			<div class="col-md-6"><div class="form-group">
+				<input class="form-control" type="date" name='coud' required>
+				 <span class="form-label">Check out</span></div></div></div>
+			<div class="row"><div class="col-md-4"><div class="form-group">
+				<input class="form-control" type="text" placeholder="No. of Adults" name='nofa'required></div></div>
+			<div class="col-md-4"><div class="form-group">
+				<input class="form-control" type="text" placeholder="No. of Children" name='nofc'required></div></div>
+			<div class="col-md-4"><div class="form-group"><div class="form-group">
+				<input class="form-control" type="text" placeholder="No. Of Rooms" name='rooms' required></div>
+			</div></div></div>
+			<div class="form-btn"><button class="submit-btn">Book Now</button></div></form>
+</form>
+</body>
+</html>
